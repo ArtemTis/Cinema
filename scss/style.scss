@@ -360,3 +360,42 @@ div{
 .not-found{
     @extend %fontStyle;
 }
+
+@media (max-width: 1220px){
+    .main-cinema__photo{
+        width: 520px;
+    }
+}
+@media (max-width: 1050px){
+    .main-cinema__photo{
+        width: 490px;
+    }
+}
+@media (max-width: 950px){
+    .films__cards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .main-cinema__upper{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .main-cinema__photo{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 500px){
+    .films__card{
+        flex-direction: column;
+        align-items: center;
+    }
+    .main-cinema__title{
+        font-size: 24px;
+        line-height: 25px;
+    }
+    .filters__title{
+        letter-spacing: 2px;
+    }
+    .main-cinema{
+        margin-top: 40px;
+    }
+}
