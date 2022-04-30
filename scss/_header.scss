@@ -1,0 +1,30 @@
+@import "_variables";
+
+.header {
+    background-color: $color;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    &_menu {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__name {
+        @extend %fontStyle;
+        font-size: 24px;
+        line-height: 28px;
+        color: white;
+    }
+
+    &__btn{
+        background-color: white;
+        color: black;
+        border-radius: 20px;
+        border: 0px;
+        padding: 10px;
+        cursor: pointer;
+    }
+}
