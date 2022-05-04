@@ -129,8 +129,8 @@ const deleteFilm = () => {
         let id = film.dataset.id;
         if (id > 0) {
           localStorage.removeItem(id);
-          let newCount = localStorage.getItem('name') - 1;
-          localStorage.setItem('name', newCount);
+          // let newCount = localStorage.getItem('name') -1;
+          // localStorage.setItem('name', newCount);
         }
       }
     })

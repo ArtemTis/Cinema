@@ -382,6 +382,14 @@ div{
         width: 100%;
         margin-bottom: 30px;
     }
+    .modal__window{
+        width:auto;
+    }
+}
+@media (max-width: 600px){
+    .modal__item input{
+        width: auto;
+    }
 }
 @media (max-width: 500px){
     .films__card{
@@ -397,5 +405,12 @@ div{
     }
     .main-cinema{
         margin-top: 40px;
+    }
+}
+
+@media (max-width: 400px){
+    .modal__window{
+        padding-left: 0;
+        padding-right: 0;
     }
 }
