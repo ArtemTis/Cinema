@@ -55,14 +55,13 @@ const addFilm = () => {
     // var reader = new FileReader();
 
     // reader.readAsDataURL(file);
-
-    // let res;
+    // console.log(reader.readAsDataURL(file));
 
     // reader.onloadend = function () {
-    //   res = reader.result;
+    //   body.image = reader.result;
     // }
 
-    // console.log(res);
+    // console.log(body);
     ///////////////////
 
     block.insertAdjacentHTML('beforeend', `
@@ -81,7 +80,13 @@ const addFilm = () => {
       </div>
     `)
 
-    name = 0;
+    event.target.reset();
+
+    const modal = document.querySelector('.modal');
+    modal.classList.remove('active');
+    document.body.classList.remove('lock');
+
+    //name = 0;
   })
 
 }
@@ -268,3 +273,20 @@ sortGenre()
 //     reader.readAsDataURL(file);
 //   }
 // }
+
+//https://www.cbr-xml-daily.ru/daily_json.js
+// fetch('https://iss.moex.com/iss/statistics/engines/currency/markets/selt/rates.json?iss.meta=off')
+//   .then((response) => {
+//     if (!response.ok) {
+//       throw new Error('HTTP error, status = ' + response.status);
+//     }
+//     return response.json();
+//   })
+//   .then((json) => {
+//     // Текущий курс доллара и евро ЦБРФ
+//     console.log(json.cbrf.data[0][json.cbrf.columns.indexOf('CBRF_USD_LAST')]);
+//     console.log(json.cbrf.data[0][json.cbrf.columns.indexOf('CBRF_EUR_LAST')]);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });

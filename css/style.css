@@ -139,7 +139,6 @@ select {
 
 .container {
   margin: 0 10%;
-  max-width: 1200px;
 }
 
 body.lock {
@@ -151,6 +150,7 @@ div {
 }
 
 .main-cinema {
+  max-width: 1200px;
   margin: 80px 0;
 }
 
@@ -209,6 +209,7 @@ div {
   height: 6px;
   border-radius: 16px;
   width: 100%;
+  max-width: 1200px;
 }
 
 .filters {
@@ -225,6 +226,7 @@ div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+          max-width: 1200px;       
 }
 
 .filters__sorts {
@@ -301,6 +303,10 @@ div {
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+.films__section{
+  max-width: 1200px;
 }
 
 .films__cards {
