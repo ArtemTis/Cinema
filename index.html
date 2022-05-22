@@ -58,7 +58,7 @@
         </div>
 
         <div class="container line-block">
-            <div class="line"></div>
+            <div class="line second-line"></div>
         </div>
 
 
@@ -93,6 +93,9 @@
                             <div class="films__image" data-id="0">
                                 <img src="img/batman.png" alt="Batman">
                                 <img src="img/trash.png" alt="Delete film" class="recycle">
+                                <div class="review__wrapper">
+                                    <p class="review">ОТЗЫВЫ</p>
+                                </div>
                             </div>
                             <div class="films__info">
                                 <h3 class="films__title">Бэтмен (2022)</h3>
@@ -106,6 +109,9 @@
                             <div class="films__image">
                                 <img src="img/uncharted.png" alt="Batman">
                                 <img src="img/trash.png" alt="Delete film" class="recycle">
+                                <div class="review__wrapper">
+                                    <p class="review">ОТЗЫВЫ</p>
+                                </div>
                             </div>
                             <div class="films__info">
                                 <h3 class="films__title">Анчартед: На картах не значится (2022)</h3>
@@ -119,12 +125,15 @@
                             <div class="films__image">
                                 <img src="img/FvsF.png" alt="Batman">
                                 <img src="img/trash.png" alt="Delete film" class="recycle">
+                                <div class="review__wrapper">
+                                    <p class="review">ОТЗЫВЫ</p>
+                                </div>
                             </div>
                             <div class="films__info">
                                 <h3 class="films__title">Ford против Ferrari (2019)</h3>
                                 <p class="films__country">Страны: США</p>
                                 <p class="films__genre">Жанр: биография, драма, боевик</p>
-                                <p class="films__date">Дата выхода: 14 февраля 2020 г.</p>
+                                <p class="films__date">Дата выхода: 14 февраля 2019 г.</p>
                                 <p class="films__age">16+</p>
                             </div>
                         </div>
@@ -132,6 +141,9 @@
                             <div class="films__image">
                                 <img src="img/pulpFiction.png" alt="Batman">
                                 <img src="img/trash.png" alt="Delete film" class="recycle">
+                                <div class="review__wrapper">
+                                    <p class="review">ОТЗЫВЫ</p>
+                                </div>
                             </div>
                             <div class="films__info">
                                 <h3 class="films__title">Криминальное чтиво (1994)</h3>
@@ -151,9 +163,6 @@
 
         <div class="modal">
             <div class="modal__window">
-                <div class="modal__close">
-                    <img src="img/close-cross.svg" alt="Close cross">
-                </div>
                 <h2>Доавьте фильм</h2>
                 <div class="modal__elements">
                     <form action="#" name="addFilm" class="modal__form">
@@ -183,9 +192,27 @@
                         </div>
                         <div class="modal__item">
                             <button type="submit" class="modal__button">Добавить фильм</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-                            <!-- <input type="submit" class="form__item form__btn">
-                            <button class="result__test" type="button">Результат</button> -->
+        <div class="modal modal-review">
+            <div class="modal__window">
+                <h2>Добавьте отзыв</h2>
+                <div class="modal__elements">
+                    <div class="text-field">
+                        <!-- <div class="message">
+                            <div class="message__text">это отзыв</div>
+                        </div> -->
+                    </div>
+                    <form action="#" name="addFilm" class="modal__form review__form">
+                        <div class="modal__item">
+                            <input type="text" name="review" class="modal__input" placeholder="Ваш отзыв">
+                        </div>
+                        <div class="modal__item">
+                            <button type="submit" class="modal__button">Добавить отзыв</button>
                         </div>
                     </form>
                 </div>

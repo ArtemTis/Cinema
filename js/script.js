@@ -69,6 +69,9 @@ const addFilm = () => {
         <div class="films__image">
             <img src="${body.image}" alt="Обложка фильма">
             <img src="img/trash.png" alt="Delete film" class="recycle">
+            <div class="review__wrapper">
+              <p class="review">ОТЗЫВЫ</p>
+            </div>
         </div>
         <div class="films__info">
             <h3 class="films__title">${body.name}</h3>
@@ -106,6 +109,9 @@ const renderFilm = () => {
             <div class="films__image">
                 <img src="${JSON.parse(localStorage.getItem(`${i}`)).image}" alt="Обложка фильма">
                 <img src="img/trash.png" alt="Delete film" class="recycle">
+                <div class="review__wrapper">
+                  <p class="review">ОТЗЫВЫ</p>
+                </div>
             </div>
             <div class="films__info">
                 <h3 class="films__title">${JSON.parse(localStorage.getItem(`${i}`)).name}</h3>
@@ -184,6 +190,9 @@ const sortGenre = () => {
                 <div class="films__image">
                     <img src="${JSON.parse(localStorage.getItem(`${i}`)).image}" alt="Обложка фильма">
                     <img src="img/trash.png" alt="Delete film" class="recycle">
+                    <div class="review__wrapper">
+                      <p class="review">ОТЗЫВЫ</p>
+                    </div>
                 </div>
                 <div class="films__info">
                     <h3 class="films__title">${JSON.parse(localStorage.getItem(`${i}`)).name}</h3>
@@ -205,6 +214,9 @@ const sortGenre = () => {
                 <div class="films__image">
                     <img src="${JSON.parse(localStorage.getItem(`${i}`)).image}" alt="Обложка фильма">
                     <img src="img/trash.png" alt="Delete film" class="recycle">
+                    <div class="review__wrapper">
+                      <p class="review">ОТЗЫВЫ</p>
+                    </div>
                 </div>
                 <div class="films__info">
                     <h3 class="films__title">${JSON.parse(localStorage.getItem(`${i}`)).name}</h3>
@@ -225,6 +237,96 @@ const sortGenre = () => {
 
 }
 sortGenre()
+
+const review = () => {
+  // const filmCards = document.getElementsByClassName('films__card');
+  const filmCards = document.querySelectorAll('.films__card');
+  const modal = document.querySelector('.modal-review');
+  let id = 0;
+
+  // for (const film of filmCards) {
+    filmCards.forEach(film => {
+
+    film.addEventListener('click', (event) => {
+      id = film.dataset.id;
+      if (event.target.classList == 'review') {
+        console.log('click' + id);
+
+        addReview(id);
+        renderReview(id);
+
+        modal.classList.add('active');
+        document.body.classList.add('lock');
+
+        modal.addEventListener('click', (e) => {
+          const modalWindow = e.target.closest('.modal__window');
+          if (!modalWindow) {
+            modal.classList.remove('active');
+            document.body.classList.remove('lock');
+          }
+        })
+      }
+    })
+  })
+}
+review();
+
+const addReview = (id) => {
+  const form = document.querySelector('.review__form');
+  const input = form.querySelector('input');
+  const field = document.querySelector('.text-field');
+  let message = [];
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    console.log(id);
+
+    if (localStorage.getItem(`message ${id}`)) {
+      message = JSON.parse(localStorage.getItem(`message ${id}`));
+    }
+
+    if (input.value) {
+      message.push(input.value);
+      localStorage.setItem(`message ${id}`, JSON.stringify(message));
+
+      field.insertAdjacentHTML('beforeend', `
+      <div class="message">
+          <div class="message__text">${input.value}</div>
+      </div>
+      `)
+    }
+
+    console.log(JSON.parse(localStorage.getItem(`message ${id}`)));
+
+    // if (input.value) {
+    //   field.insertAdjacentHTML('beforeend', `
+    //   <div class="message">
+    //       <div class="message__text">${input.value}</div>
+    //   </div>
+    //   `)
+    // }
+    message = [];
+    event.target.reset();
+  })
+}
+
+const renderReview = (id) => {
+  const field = document.querySelector('.text-field');
+
+  field.innerHTML = '';
+  if (localStorage.getItem(`message ${id}`)) {
+    for (let i = 0; i < JSON.parse(localStorage.getItem(`message ${id}`)).length; i++) {
+      field.insertAdjacentHTML('beforeend', `
+        <div class="message">
+            <div class="message__text">${JSON.parse(localStorage.getItem(`message ${id}`))[i]}</div>
+        </div>
+      `)
+    }
+  }
+  // JSON.parse(localStorage.getItem(`message ${id}`));
+}
+
 
 
 //////////////////////////  block.innerHTML = `<p class="not-found">Ничего не найдено</p>`;
